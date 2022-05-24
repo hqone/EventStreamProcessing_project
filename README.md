@@ -1,5 +1,5 @@
 # Event stream processing
-## Python + Kafka + Spark + MongoDB + JSON WebService
+## Python + Kafka + Spark + PostgreSQL + Grafana
 
 Application have tree parts:
 * EventGenerator.py
