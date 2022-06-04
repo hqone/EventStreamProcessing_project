@@ -2,7 +2,6 @@ import json
 import logging
 
 from kafka import KafkaConsumer, KafkaProducer
-# from pymongo import database, MongoClient
 import psycopg2
 from app.Utils import log_performance
 
@@ -14,7 +13,6 @@ class Resources:
     TOPIC_COMPUTED_DATA = 'computed_data'
     KAFKA_URI = 'kafka:9092'
     KAFKA_LOCAL_URI = 'localhost:9093'
-    MONGODB_URI = 'mongodb://root:example@mongo:27017'
 
     def __init__(self) -> None:
         # Init privates
@@ -72,13 +70,6 @@ class Resources:
 
     @log_performance
     def __connect_storage(self):
-        # """
-        # Connect to MongoDB
-        # :return: Database Object
-        # """
-        # logger.debug('Connecting to MongoDB..')
-        # client = MongoClient(self.MONGODB_URI)
-        # return client.ESP
         logger.debug('Connecting to Postgres..')
         connection = psycopg2.connect(user="postgres",
                                       password="example",
